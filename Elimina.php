@@ -1,11 +1,29 @@
 <?php
+/**
+ * Elimina.php
+ * 
+ * Permet eliminar un producte seleccionat de la base de dades.
+ * 
+ * PHP version 8.2
+ * 
+ * @category ECommerce
+ * @package  LaMevaBotiga
+ * @author   Jordi Costa Kammerer <jordicosta@paucasesnovescifp.cat>
+ * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @link     https://github.com/JordiCostaKammerer/Desplegament-web
+ */
+
 // Incluir el archivo de conexión
 include 'Connexio.php';
 
 // Crear una instancia de la conexión
 $conexion = (new Connexio())->obtenirConnexio();
 
-// Procesar la solicitud si se ha enviado un ID de producto
+/**
+ * Procesar la solicitud y eliminar un producto
+ * 
+ * @return void
+ */
 if (isset($_POST["id"])) {
     $id = $_POST["id"];
 
