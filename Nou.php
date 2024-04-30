@@ -1,11 +1,29 @@
 <?php
+/**
+ * Nou.php
+ * 
+ * Permet afegir un nou producte a la base de dades.
+ * 
+ * PHP version 8.2
+ * 
+ * @category ECommerce
+ * @package  LaMevaBotiga
+ * @author   Jordi Costa Kammerer <jordicosta@paucasesnovescifp.cat>
+ * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @link     https://github.com/JordiCostaKammerer/Desplegament-web
+ */
+
 // Incluir el archivo de conexión
 include 'Connexio.php';
 
 // Crear una instancia de la conexión
 $conexion = (new Connexio())->obtenirConnexio();
 
-// Procesar el formulario si se ha enviado
+/**
+ * Procesar el formulario y agregar un nuevo producto
+ * 
+ * @return void
+ */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = $_POST["nom"];
     $descripcio = $_POST["descripcio"];
